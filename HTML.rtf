@@ -1,0 +1,950 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28900\viewh15940\viewkind0
+\pard\tqr\tx720\tqr\tx1440\tqr\tx2160\tqr\tx2880\tqr\tx3600\tqr\tx4320\tqr\tx5040\tqr\tx5760\tqr\tx6480\tqr\tx7200\tqr\tx7920\tqr\tx8640\pardirnatural\qr\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+\
+<html lang="he" dir="rtl">\
+\
+<head>\
+\
+<meta charset="UTF-8">\
+\
+<meta name="viewport" content="width=device-width, initial-scale=1">\
+\
+<title>\uc0\u1502 \u1504 \u1514 \u1495  \u1508 \u1493 \u1496 \u1504 \u1510 \u1497 \u1488 \u1500  \u1502 \u1504 \u1497 \u1493 \u1514 </title>\
+\
+<style>\
+\
+:root \{\
+\
+  --bg:#eceff1; --card:#fff; --text:#17202a;\
+\
+  --muted:#667085; --primary:#2563eb;\
+\
+  --green:#16803c; --red:#d92d20; --border:#dfe3e8;\
+\
+\}\
+\
+*\{box-sizing:border-box\}\
+\
+body\{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)\}\
+\
+header\{background:#111827;color:#fff;padding:22px 16px;text-align:center\}\
+\
+header h1\{margin:0 0 8px;font-size:25px\}\
+\
+header p\{margin:0;color:#cbd5e1\}\
+\
+main\{max-width:1100px;margin:auto;padding:16px\}\
+\
+.notice\{background:#fff7d6;border:1px solid #f0d879;padding:12px;border-radius:12px;margin-bottom:16px;line-height:1.6\}\
+\
+.grid\{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px\}\
+\
+.card\{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:0 2px 7px #00000008;margin-bottom:14px;min-width:0\}\
+\
+h2\{font-size:19px;margin:0 0 14px\}\
+\
+label\{display:block;font-size:14px;margin:10px 0 5px\}\
+\
+input,select,textarea\{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;font:inherit\}\
+\
+button\{border:0;border-radius:9px;padding:11px 14px;background:var(--primary);color:#fff;cursor:pointer;font:inherit;font-weight:bold\}\
+\
+button:hover\{filter:brightness(.95)\}\
+\
+button.secondary\{background:#475467\}\
+\
+button.danger\{background:var(--red)\}\
+\
+button.small\{padding:7px 10px;font-size:13px\}\
+\
+.actions\{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px\}\
+\
+.stats\{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:14px\}\
+\
+.stat\{background:#fff;border:1px solid var(--border);border-radius:13px;padding:14px\}\
+\
+.name\{color:var(--muted);font-size:13px\}\
+\
+.value\{font-size:22px;font-weight:bold;margin-top:7px;overflow-wrap:anywhere\}\
+\
+table\{width:100%;border-collapse:collapse;font-size:14px\}\
+\
+th,td\{padding:10px 7px;border-bottom:1px solid var(--border);text-align:right\}\
+\
+th\{color:var(--muted);font-weight:bold\}\
+\
+.table-wrap\{overflow-x:auto\}\
+\
+.empty\{color:var(--muted);text-align:center;padding:20px 5px\}\
+\
+.positive\{color:var(--green)\}.negative\{color:var(--red)\}\
+\
+.result\{margin-top:12px;padding:12px;border-radius:10px;background:#f1f5f9;line-height:1.7;white-space:pre-wrap\}\
+\
+footer\{text-align:center;color:var(--muted);padding:20px;font-size:12px\}\
+\
+@media(max-width:500px)\{main\{padding:10px\}header h1\{font-size:21px\}.card\{padding:13px\}\}\
+\
+</style>\
+\
+</head>\
+\
+<body>\
+\
+<header>\
+\
+  <h1>\uc0\u55357 \u56520  \u1502 \u1504 \u1514 \u1495  \u1508 \u1493 \u1496 \u1504 \u1510 \u1497 \u1488 \u1500  \u1502 \u1504 \u1497 \u1493 \u1514 </h1>\
+\
+  <p>\uc0\u1502 \u1506 \u1511 \u1489  \u1502 \u1504 \u1497 \u1493 \u1514 , \u1504 \u1497 \u1492 \u1493 \u1500  \u1514 \u1497 \u1511  \u1493 \u1495 \u1497 \u1513 \u1493 \u1489 \u1497  \u1492 \u1513 \u1511 \u1506 \u1492 </p>\
+\
+</header>\
+\
+<main>\
+\
+  <div class="notice">\
+\
+    <strong>\uc0\u1490 \u1512 \u1505 \u1492  \u1500 \u1500 \u1488  API:</strong>\
+\
+    \uc0\u1502 \u1495 \u1497 \u1512 \u1497  \u1492 \u1502 \u1504 \u1497 \u1493 \u1514  \u1502 \u1493 \u1494 \u1504 \u1497 \u1501  \u1497 \u1491 \u1504 \u1497 \u1514  \u1493 \u1488 \u1497 \u1504 \u1501  \u1502 \u1495 \u1497 \u1512 \u1497 \u1501  \u1489 \u1494 \u1502 \u1503  \u1488 \u1502 \u1514 .\
+\
+    \uc0\u1492 \u1504 \u1514 \u1493 \u1504 \u1497 \u1501  \u1504 \u1513 \u1502 \u1512 \u1497 \u1501  \u1489 \u1491 \u1508 \u1491 \u1508 \u1503  \u1489 \u1502 \u1499 \u1513 \u1497 \u1512  \u1513 \u1500 \u1498 . \u1492 \u1502 \u1495 \u1513 \u1489 \u1493 \u1503  \u1488 \u1497 \u1504 \u1493  \u1497 \u1497 \u1506 \u1493 \u1509  \u1492 \u1513 \u1511 \u1506 \u1493 \u1514 .\
+\
+  </div>\
+\
+  <section class="stats">\
+\
+    <div class="stat"><div class="name">\uc0\u1514 \u1511 \u1510 \u1497 \u1489  \u1492 \u1513 \u1511 \u1506 \u1492 </div><div class="value" id="statBudget">\u8362 0</div></div>\
+\
+    <div class="stat"><div class="name">\uc0\u1513 \u1493 \u1493 \u1497  \u1514 \u1497 \u1511  \u1502 \u1513 \u1493 \u1506 \u1512 </div><div class="value" id="statValue">\u8362 0</div></div>\
+\
+    <div class="stat"><div class="name">\uc0\u1502 \u1504 \u1497 \u1493 \u1514  \u1489 \u1514 \u1497 \u1511 </div><div class="value" id="statCount">0</div></div>\
+\
+    <div class="stat"><div class="name">\uc0\u1502 \u1504 \u1497 \u1493 \u1514  \u1489 \u1502 \u1506 \u1511 \u1489 </div><div class="value" id="statWatch">0</div></div>\
+\
+  </section>\
+\
+  <div class="grid">\
+\
+    <section class="card">\
+\
+      <h2>\uc0\u55357 \u56496  \u1514 \u1511 \u1510 \u1497 \u1489  \u1492 \u1513 \u1511 \u1506 \u1492 </h2>\
+\
+      <label for="budget">\uc0\u1514 \u1511 \u1510 \u1497 \u1489  \u1499 \u1493 \u1500 \u1500  (\u8362 )</label>\
+\
+      <input id="budget" type="number" min="0" step="100" value="16000">\
+\
+      <label for="cash">\uc0\u1502 \u1494 \u1493 \u1502 \u1503  \u1494 \u1502 \u1497 \u1503  (\u8362 )</label>\
+\
+      <input id="cash" type="number" min="0" step="100" value="0">\
+\
+      <label for="fee">\uc0\u1506 \u1502 \u1500 \u1492  \u1500 \u1499 \u1500  \u1511 \u1504 \u1497 \u1497 \u1492  (\u8362 )</label>\
+\
+      <input id="fee" type="number" min="0" step="1" value="0">\
+\
+      <div class="actions">\
+\
+        <button onclick="saveBudget()">\uc0\u1513 \u1502 \u1493 \u1512  \u1514 \u1511 \u1510 \u1497 \u1489 </button>\
+\
+        <button class="secondary" onclick="resetBudget()">\uc0\u1488 \u1497 \u1508 \u1493 \u1505 </button>\
+\
+      </div>\
+\
+      <div class="result" id="budgetResult"></div>\
+\
+    </section>\
+\
+    <section class="card">\
+\
+      <h2>\uc0\u10133  \u1492 \u1493 \u1505 \u1508 \u1514  \u1502 \u1504 \u1497 \u1492  \u1500 \u1514 \u1497 \u1511 </h2>\
+\
+      <label for="symbol">\uc0\u1505 \u1497 \u1502 \u1493 \u1500  \u1502 \u1504 \u1497 \u1492 </label>\
+\
+      <input id="symbol" placeholder="\uc0\u1500 \u1491 \u1493 \u1490 \u1502 \u1492  NVDA" maxlength="12">\
+\
+      <label for="shares">\uc0\u1502 \u1505 \u1508 \u1512  \u1502 \u1504 \u1497 \u1493 \u1514 </label>\
+\
+      <input id="shares" type="number" min="0.0001" step="any" placeholder="3">\
+\
+      <label for="price">\uc0\u1502 \u1495 \u1497 \u1512  \u1500 \u1502 \u1504 \u1497 \u1492  ($)</label>\
+\
+      <input id="price" type="number" min="0" step="any" placeholder="180">\
+\
+      <label for="fx">\uc0\u1513 \u1506 \u1512  \u1491 \u1493 \u1500 \u1512  \u1500 \u1513 \u1511 \u1500 </label>\
+\
+      <input id="fx" type="number" min="0.01" step="0.01" value="3.3">\
+\
+      <div class="actions"><button onclick="addHolding()">\uc0\u1492 \u1493 \u1505 \u1507  \u1500 \u1514 \u1497 \u1511 </button></div>\
+\
+    </section>\
+\
+    <section class="card">\
+\
+      <h2>\uc0\u55357 \u56590  \u1492 \u1493 \u1505 \u1508 \u1492  \u1500 \u1512 \u1513 \u1497 \u1502 \u1514  \u1502 \u1506 \u1511 \u1489 </h2>\
+\
+      <label for="watchSymbol">\uc0\u1505 \u1497 \u1502 \u1493 \u1500  \u1502 \u1504 \u1497 \u1492 </label>\
+\
+      <input id="watchSymbol" placeholder="\uc0\u1500 \u1491 \u1493 \u1490 \u1502 \u1492  TTWO" maxlength="12">\
+\
+      <label for="watchNote">\uc0\u1492 \u1506 \u1512 \u1492 </label>\
+\
+      <input id="watchNote" placeholder="\uc0\u1500 \u1491 \u1493 \u1490 \u1502 \u1492 : \u1510 \u1502 \u1497 \u1495 \u1492  \u1489 \u1514 \u1495 \u1493 \u1501  \u1492 \u1490 \u1497 \u1497 \u1502 \u1497 \u1504 \u1490 ">\
+\
+      <div class="actions"><button onclick="addWatch()">\uc0\u1492 \u1493 \u1505 \u1507  \u1500 \u1502 \u1506 \u1511 \u1489 </button></div>\
+\
+    </section>\
+\
+    <section class="card">\
+\
+      <h2>\uc0\u55358 \u56814  \u1502 \u1495 \u1513 \u1489 \u1493 \u1503  \u1508 \u1493 \u1496 \u1504 \u1510 \u1497 \u1488 \u1500 </h2>\
+\
+      <label for="calcSymbol">\uc0\u1505 \u1497 \u1502 \u1493 \u1500  \u1502 \u1504 \u1497 \u1492  (\u1500 \u1488  \u1495 \u1493 \u1489 \u1492 )</label>\
+\
+      <input id="calcSymbol" placeholder="NVDA">\
+\
+      <label for="calcInvestment">\uc0\u1505 \u1499 \u1493 \u1501  \u1492 \u1513 \u1511 \u1506 \u1492  (\u8362 )</label>\
+\
+      <input id="calcInvestment" type="number" min="0" value="1000">\
+\
+      <label for="calcGrowth">\uc0\u1513 \u1497 \u1504 \u1493 \u1497  \u1502 \u1513 \u1493 \u1506 \u1512  \u1489 \u1488 \u1495 \u1493 \u1494 \u1497 \u1501  (%)</label>\
+\
+      <input id="calcGrowth" type="number" step="any" value="20">\
+\
+      <div class="actions"><button onclick="calculatePotential()">\uc0\u1495 \u1513 \u1489  \u1514 \u1512 \u1495 \u1497 \u1513 </button></div>\
+\
+      <div class="result" id="calcResult">\uc0\u1492 \u1494 \u1503  \u1504 \u1514 \u1493 \u1504 \u1497 \u1501  \u1499 \u1491 \u1497  \u1500 \u1495 \u1513 \u1489  \u1514 \u1512 \u1495 \u1497 \u1513 .</div>\
+\
+    </section>\
+\
+  </div>\
+\
+  <section class="card">\
+\
+    <h2>\uc0\u55357 \u56522  \u1514 \u1497 \u1511  \u1492 \u1492 \u1513 \u1511 \u1506 \u1493 \u1514  \u1513 \u1500 \u1497 </h2>\
+\
+    <div class="table-wrap">\
+\
+      <table>\
+\
+        <thead><tr>\
+\
+          <th>\uc0\u1502 \u1504 \u1497 \u1492 </th><th>\u1499 \u1502 \u1493 \u1514 </th><th>\u1502 \u1495 \u1497 \u1512  ($)</th>\
+\
+          <th>\uc0\u1513 \u1493 \u1493 \u1497  (\u8362 )</th><th>\u1508 \u1506 \u1493 \u1500 \u1493 \u1514 </th>\
+\
+        </tr></thead>\
+\
+        <tbody id="holdingsBody"></tbody>\
+\
+      </table>\
+\
+    </div>\
+\
+    <div class="empty" id="holdingsEmpty">\uc0\u1506 \u1491 \u1497 \u1497 \u1503  \u1500 \u1488  \u1492 \u1493 \u1505 \u1508 \u1514  \u1502 \u1504 \u1497 \u1493 \u1514  \u1500 \u1514 \u1497 \u1511 .</div>\
+\
+  </section>\
+\
+  <section class="card">\
+\
+    <h2>\uc0\u55357 \u56384  \u1512 \u1513 \u1497 \u1502 \u1514  \u1502 \u1506 \u1511 \u1489 </h2>\
+\
+    <div class="table-wrap">\
+\
+      <table>\
+\
+        <thead><tr><th>\uc0\u1502 \u1504 \u1497 \u1492 </th><th>\u1492 \u1506 \u1512 \u1492 </th><th>\u1508 \u1506 \u1493 \u1500 \u1492 </th></tr></thead>\
+\
+        <tbody id="watchBody"></tbody>\
+\
+      </table>\
+\
+    </div>\
+\
+    <div class="empty" id="watchEmpty">\uc0\u1512 \u1513 \u1497 \u1502 \u1514  \u1492 \u1502 \u1506 \u1511 \u1489  \u1512 \u1497 \u1511 \u1492 .</div>\
+\
+  </section>\
+\
+  <section class="card">\
+\
+    <h2>\uc0\u55358 \u56800  \u1504 \u1497 \u1514 \u1493 \u1495  \u1502 \u1504 \u1497 \u1492  \u1497 \u1491 \u1504 \u1497 </h2>\
+\
+    <p>\uc0\u1492 \u1493 \u1505 \u1507  \u1488 \u1514  \u1492 \u1504 \u1514 \u1493 \u1504 \u1497 \u1501  \u1513 \u1488 \u1514 \u1492  \u1502 \u1499 \u1497 \u1512  \u1499 \u1491 \u1497  \u1500 \u1511 \u1489 \u1500  \u1505 \u1497 \u1499 \u1493 \u1501  \u1502 \u1505 \u1493 \u1491 \u1512 . \u1488 \u1497 \u1503  \u1499 \u1488 \u1503  \u1504 \u1514 \u1493 \u1504 \u1497  \u1513 \u1493 \u1511  \u1495 \u1497 \u1497 \u1501 .</p>\
+\
+    <label for="analysisSymbol">\uc0\u1505 \u1497 \u1502 \u1493 \u1500  \u1502 \u1504 \u1497 \u1492 </label>\
+\
+    <input id="analysisSymbol" placeholder="\uc0\u1500 \u1491 \u1493 \u1490 \u1502 \u1492  MSFT">\
+\
+    <label for="analysisRevenue">\uc0\u1510 \u1502 \u1497 \u1495 \u1514  \u1492 \u1499 \u1504 \u1505 \u1493 \u1514  \u1513 \u1504 \u1514 \u1497 \u1514  (%)</label>\
+\
+    <input id="analysisRevenue" type="number" step="any" placeholder="\uc0\u1500 \u1491 \u1493 \u1490 \u1502 \u1492  15">\
+\
+    <label for="analysisProfit">\uc0\u1512 \u1493 \u1493 \u1495 \u1497 \u1493 \u1514  \u1492 \u1495 \u1489 \u1512 \u1492 </label>\
+\
+    <select id="analysisProfit">\
+\
+      <option value="positive">\uc0\u1512 \u1493 \u1493 \u1495 \u1497 \u1514 </option>\
+\
+      <option value="breakEven">\uc0\u1505 \u1489 \u1497 \u1489  \u1504 \u1511 \u1493 \u1491 \u1514  \u1492 \u1488 \u1497 \u1494 \u1493 \u1503 </option>\
+\
+      <option value="negative">\uc0\u1506 \u1491 \u1497 \u1497 \u1503  \u1502 \u1508 \u1505 \u1497 \u1491 \u1492 </option>\
+\
+      <option value="unknown">\uc0\u1500 \u1488  \u1497 \u1491 \u1493 \u1506 </option>\
+\
+    </select>\
+\
+    <label for="analysisRisk">\uc0\u1512 \u1502 \u1514  \u1505 \u1497 \u1499 \u1493 \u1503  \u1502 \u1513 \u1493 \u1506 \u1512 \u1514 </label>\
+\
+    <select id="analysisRisk">\
+\
+      <option value="low">\uc0\u1504 \u1502 \u1493 \u1499 \u1492 </option>\
+\
+      <option value="medium" selected>\uc0\u1489 \u1497 \u1504 \u1493 \u1504 \u1497 \u1514 </option>\
+\
+      <option value="high">\uc0\u1490 \u1489 \u1493 \u1492 \u1492 </option>\
+\
+    </select>\
+\
+    <label for="analysisNotes">\uc0\u1497 \u1514 \u1512 \u1493 \u1504 \u1493 \u1514 , \u1495 \u1505 \u1512 \u1493 \u1504 \u1493 \u1514  \u1493 \u1505 \u1497 \u1499 \u1493 \u1504 \u1497 \u1501 </label>\
+\
+    <textarea id="analysisNotes" rows="3" placeholder="\uc0\u1499 \u1514 \u1493 \u1489  \u1499 \u1488 \u1503  \u1488 \u1514  \u1492 \u1502 \u1497 \u1491 \u1506  \u1513 \u1502 \u1510 \u1488 \u1514  \u1506 \u1500  \u1492 \u1495 \u1489 \u1512 \u1492 "></textarea>\
+\
+    <div class="actions">\
+\
+      <button onclick="analyzeStock()">\uc0\u1510 \u1493 \u1512  \u1505 \u1497 \u1499 \u1493 \u1501 </button>\
+\
+      <button class="secondary" onclick="clearAnalysis()">\uc0\u1504 \u1511 \u1492 </button>\
+\
+    </div>\
+\
+    <div class="result" id="analysisResult">\uc0\u1492 \u1505 \u1497 \u1499 \u1493 \u1501  \u1497 \u1493 \u1508 \u1497 \u1506  \u1499 \u1488 \u1503 .</div>\
+\
+  </section>\
+\
+  <section class="card">\
+\
+    <h2>\uc0\u55357 \u56510  \u1504 \u1497 \u1492 \u1493 \u1500  \u1504 \u1514 \u1493 \u1504 \u1497 \u1501 </h2>\
+\
+    <p>\uc0\u1488 \u1508 \u1513 \u1512  \u1500 \u1497 \u1497 \u1510 \u1488  \u1488 \u1514  \u1492 \u1504 \u1514 \u1493 \u1504 \u1497 \u1501  \u1500 \u1511 \u1493 \u1489 \u1509  \u1490 \u1497 \u1489 \u1493 \u1497  \u1488 \u1493  \u1500 \u1497 \u1497 \u1489 \u1488  \u1490 \u1497 \u1489 \u1493 \u1497  \u1511 \u1493 \u1491 \u1501 .</p>\
+\
+    <div class="actions">\
+\
+      <button onclick="exportData()">\uc0\u1497 \u1497 \u1510 \u1493 \u1488  \u1490 \u1497 \u1489 \u1493 \u1497 </button>\
+\
+      <button class="secondary" onclick="document.getElementById('importFile').click()">\uc0\u1497 \u1497 \u1489 \u1493 \u1488  \u1490 \u1497 \u1489 \u1493 \u1497 </button>\
+\
+      <button class="danger" onclick="clearAll()">\uc0\u1502 \u1495 \u1497 \u1511 \u1514  \u1499 \u1500  \u1492 \u1504 \u1514 \u1493 \u1504 \u1497 \u1501 </button>\
+\
+    </div>\
+\
+    <input id="importFile" type="file" accept="application/json" class="hidden" onchange="importData(event)">\
+\
+    <div class="result" id="dataMessage"></div>\
+\
+  </section>\
+\
+</main>\
+\
+<footer>\
+\
+  \uc0\u1502 \u1504 \u1514 \u1495  \u1508 \u1493 \u1496 \u1504 \u1510 \u1497 \u1488 \u1500  \u1502 \u1504 \u1497 \u1493 \u1514  \'b7 \u1504 \u1514 \u1493 \u1504 \u1497 \u1501  \u1502 \u1511 \u1493 \u1502 \u1497 \u1497 \u1501  \u1489 \u1500 \u1489 \u1491  \'b7 \u1500 \u1488  \u1497 \u1497 \u1506 \u1493 \u1509  \u1492 \u1513 \u1511 \u1506 \u1493 \u1514 \
+\
+</footer>\
+\
+<script>\
+\
+const STORAGE_KEY = "stockAnalyzerNoApi_v1";\
+\
+function defaultState() \{\
+\
+  return \{\
+\
+    budget:16000,\
+\
+    cash:0,\
+\
+    fee:0,\
+\
+    holdings:[],\
+\
+    watchlist:[]\
+\
+  \};\
+\
+\}\
+\
+function loadState() \{\
+\
+  try \{\
+\
+    const saved = localStorage.getItem(STORAGE_KEY);\
+\
+    if (!saved) return defaultState();\
+\
+    const data = JSON.parse(saved);\
+\
+    return \{\
+\
+      ...defaultState(),\
+\
+      ...data,\
+\
+      holdings:Array.isArray(data.holdings) ? data.holdings : [],\
+\
+      watchlist:Array.isArray(data.watchlist) ? data.watchlist : []\
+\
+    \};\
+\
+  \} catch \{\
+\
+    return defaultState();\
+\
+  \}\
+\
+\}\
+\
+let state = loadState();\
+\
+function persist() \{\
+\
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));\
+\
+\}\
+\
+function number(id) \{\
+\
+  const value = Number(document.getElementById(id).value);\
+\
+  return Number.isFinite(value) ? value : 0;\
+\
+\}\
+\
+function text(id) \{\
+\
+  return document.getElementById(id).value.trim();\
+\
+\}\
+\
+function money(value, currency="ILS") \{\
+\
+  return new Intl.NumberFormat("he-IL", \{\
+\
+    style:"currency",\
+\
+    currency,\
+\
+    maximumFractionDigits:2\
+\
+  \}).format(value);\
+\
+\}\
+\
+function safe(value) \{\
+\
+  return String(value ?? "").replace(/[&<>"']/g, char => (\{\
+\
+    "&":"&amp;","<":"&lt;",">":"&gt;",\
+\
+    '"':"&quot;","'":"&#39;"\
+\
+  \})[char]);\
+\
+\}\
+\
+function saveBudget() \{\
+\
+  state.budget = Math.max(0, number("budget"));\
+\
+  state.cash = Math.max(0, number("cash"));\
+\
+  state.fee = Math.max(0, number("fee"));\
+\
+  persist();\
+\
+  render();\
+\
+\}\
+\
+function resetBudget() \{\
+\
+  document.getElementById("budget").value = 0;\
+\
+  document.getElementById("cash").value = 0;\
+\
+  document.getElementById("fee").value = 0;\
+\
+  saveBudget();\
+\
+\}\
+\
+function addHolding() \{\
+\
+  const symbol = text("symbol").toUpperCase();\
+\
+  const shares = number("shares");\
+\
+  const price = number("price");\
+\
+  const fx = number("fx");\
+\
+  if (!/^[A-Z0-9.-]\{1,12\}$/.test(symbol)) \{\
+\
+    alert("\uc0\u1492 \u1494 \u1503  \u1505 \u1497 \u1502 \u1493 \u1500  \u1502 \u1504 \u1497 \u1492  \u1514 \u1511 \u1497 \u1503 .");\
+\
+    return;\
+\
+  \}\
+\
+  if (shares <= 0 || price < 0 || fx <= 0) \{\
+\
+    alert("\uc0\u1489 \u1491 \u1493 \u1511  \u1488 \u1514  \u1499 \u1502 \u1493 \u1514  \u1492 \u1502 \u1504 \u1497 \u1493 \u1514 , \u1492 \u1502 \u1495 \u1497 \u1512  \u1493 \u1513 \u1506 \u1512  \u1492 \u1491 \u1493 \u1500 \u1512 .");\
+\
+    return;\
+\
+  \}\
+\
+  state.holdings.push(\{\
+\
+    id:Date.now().toString() + Math.random().toString(16).slice(2),\
+\
+    symbol, shares, price, fx\
+\
+  \});\
+\
+  persist();\
+\
+  document.getElementById("symbol").value = "";\
+\
+  document.getElementById("shares").value = "";\
+\
+  document.getElementById("price").value = "";\
+\
+  render();\
+\
+\}\
+\
+function updateHolding(id) \{\
+\
+  const item = state.holdings.find(x => x.id === id);\
+\
+  if (!item) return;\
+\
+  const newPrice = prompt("\uc0\u1492 \u1494 \u1503  \u1502 \u1495 \u1497 \u1512  \u1495 \u1491 \u1513  \u1489 \u1491 \u1493 \u1500 \u1512 \u1497 \u1501 :", item.price);\
+\
+  if (newPrice === null) return;\
+\
+  const price = Number(newPrice);\
+\
+  if (!Number.isFinite(price) || price < 0) \{\
+\
+    alert("\uc0\u1502 \u1495 \u1497 \u1512  \u1500 \u1488  \u1514 \u1511 \u1497 \u1503 .");\
+\
+    return;\
+\
+  \}\
+\
+  const newFx = prompt("\uc0\u1492 \u1494 \u1503  \u1513 \u1506 \u1512  \u1491 \u1493 \u1500 \u1512  \u1500 \u1513 \u1511 \u1500 :", item.fx);\
+\
+  if (newFx === null) return;\
+\
+  const fx = Number(newFx);\
+\
+  if (!Number.isFinite(fx) || fx <= 0) \{\
+\
+    alert("\uc0\u1513 \u1506 \u1512  \u1495 \u1500 \u1497 \u1508 \u1497 \u1503  \u1500 \u1488  \u1514 \u1511 \u1497 \u1503 .");\
+\
+    return;\
+\
+  \}\
+\
+  item.price = price;\
+\
+  item.fx = fx;\
+\
+  persist();\
+\
+  render();\
+\
+\}\
+\
+function removeHolding(id) \{\
+\
+  if (!confirm("\uc0\u1500 \u1502 \u1495 \u1493 \u1511  \u1488 \u1514  \u1492 \u1502 \u1504 \u1497 \u1492  \u1502 \u1492 \u1514 \u1497 \u1511 ?")) return;\
+\
+  state.holdings = state.holdings.filter(x => x.id !== id);\
+\
+  persist();\
+\
+  render();\
+\
+\}\
+\
+function addWatch() \{\
+\
+  const symbol = text("watchSymbol").toUpperCase();\
+\
+  const note = text("watchNote");\
+\
+  if (!/^[A-Z0-9.-]\{1,12\}$/.test(symbol)) \{\
+\
+    alert("\uc0\u1492 \u1494 \u1503  \u1505 \u1497 \u1502 \u1493 \u1500  \u1502 \u1504 \u1497 \u1492  \u1514 \u1511 \u1497 \u1503 .");\
+\
+    return;\
+\
+  \}\
+\
+  if (state.watchlist.some(x => x.symbol === symbol)) \{\
+\
+    alert("\uc0\u1492 \u1502 \u1504 \u1497 \u1492  \u1499 \u1489 \u1512  \u1504 \u1502 \u1510 \u1488 \u1514  \u1489 \u1512 \u1513 \u1497 \u1502 \u1514  \u1492 \u1502 \u1506 \u1511 \u1489 .");\
+\
+    return;\
+\
+  \}\
+\
+  state.watchlist.push(\{\
+\
+    id:Date.now().toString() + Math.random().toString(16).slice(2),\
+\
+    symbol,note\
+\
+  \});\
+\
+  persist();\
+\
+  document.getElementById("watchSymbol").value = "";\
+\
+  document.getElementById("watchNote").value = "";\
+\
+  render();\
+\
+\}\
+\
+function removeWatch(id) \{\
+\
+  state.watchlist = state.watchlist.filter(x => x.id !== id);\
+\
+  persist();\
+\
+  render();\
+\
+\}\
+\
+function calculatePotential() \{\
+\
+  const symbol = text("calcSymbol").toUpperCase();\
+\
+  const investment = number("calcInvestment");\
+\
+  const growth = number("calcGrowth");\
+\
+  if (investment < 0 || growth < -100) \{\
+\
+    alert("\uc0\u1489 \u1491 \u1493 \u1511  \u1488 \u1514  \u1505 \u1499 \u1493 \u1501  \u1492 \u1492 \u1513 \u1511 \u1506 \u1492  \u1493 \u1488 \u1514  \u1488 \u1495 \u1493 \u1494  \u1492 \u1513 \u1497 \u1504 \u1493 \u1497 .");\
+\
+    return;\
+\
+  \}\
+\
+  const profit = investment * growth / 100;\
+\
+  const finalValue = investment + profit;\
+\
+  const sign = profit > 0 ? "+" : "";\
+\
+  document.getElementById("calcResult").textContent =\
+\
+    (symbol ? "\uc0\u1502 \u1504 \u1497 \u1492 : " + symbol + "\\n" : "") +\
+\
+    "\uc0\u1505 \u1499 \u1493 \u1501  \u1492 \u1514 \u1495 \u1500 \u1514 \u1497 : " + money(investment) + "\\n" +\
+\
+    "\uc0\u1513 \u1497 \u1504 \u1493 \u1497  \u1502 \u1513 \u1493 \u1506 \u1512 : " + sign + money(profit) + "\\n" +\
+\
+    "\uc0\u1513 \u1493 \u1493 \u1497  \u1505 \u1493 \u1508 \u1497  \u1489 \u1514 \u1512 \u1495 \u1497 \u1513 : " + money(finalValue) + "\\n\\n" +\
+\
+    "\uc0\u1494 \u1492 \u1493  \u1514 \u1512 \u1495 \u1497 \u1513  \u1502 \u1514 \u1502 \u1496 \u1497  \u1489 \u1500 \u1489 \u1491 , \u1500 \u1488  \u1514 \u1495 \u1494 \u1497 \u1514  \u1500 \u1502 \u1495 \u1497 \u1512  \u1492 \u1502 \u1504 \u1497 \u1492 .";\
+\
+\}\
+\
+function analyzeStock() \{\
+\
+  const symbol = text("analysisSymbol").toUpperCase();\
+\
+  const growthRaw = text("analysisRevenue");\
+\
+  const growth = Number(growthRaw);\
+\
+  const profit = document.getElementById("analysisProfit").value;\
+\
+  const risk = document.getElementById("analysisRisk").value;\
+\
+  const notes = text("analysisNotes");\
+\
+  if (!symbol) \{\
+\
+    alert("\uc0\u1492 \u1494 \u1503  \u1505 \u1497 \u1502 \u1493 \u1500  \u1502 \u1504 \u1497 \u1492 .");\
+\
+    return;\
+\
+  \}\
+\
+  const profitText = \{\
+\
+    positive:"\uc0\u1492 \u1495 \u1489 \u1512 \u1492  \u1512 \u1493 \u1493 \u1495 \u1497 \u1514  \u1500 \u1508 \u1497  \u1492 \u1504 \u1514 \u1493 \u1504 \u1497 \u1501  \u1513 \u1492 \u1493 \u1494 \u1504 \u1493 .",\
+\
+    breakEven:"\uc0\u1492 \u1495 \u1489 \u1512 \u1492  \u1505 \u1489 \u1497 \u1489  \u1504 \u1511 \u1493 \u1491 \u1514  \u1492 \u1488 \u1497 \u1494 \u1493 \u1503  \u1500 \u1508 \u1497  \u1492 \u1504 \u1514 \u1493 \u1504 \u1497 \u1501  \u1513 \u1492 \u1493 \u1494 \u1504 \u1493 .",\
+\
+    negative:"\uc0\u1492 \u1495 \u1489 \u1512 \u1492  \u1506 \u1491 \u1497 \u1497 \u1503  \u1502 \u1508 \u1505 \u1497 \u1491 \u1492  \u1500 \u1508 \u1497  \u1492 \u1504 \u1514 \u1493 \u1504 \u1497 \u1501  \u1513 \u1492 \u1493 \u1494 \u1504 \u1493 .",\
+\
+    unknown:"\uc0\u1488 \u1497 \u1503  \u1502 \u1505 \u1508 \u1497 \u1511  \u1502 \u1497 \u1491 \u1506  \u1506 \u1500  \u1512 \u1493 \u1493 \u1495 \u1497 \u1493 \u1514  \u1492 \u1495 \u1489 \u1512 \u1492 ."\
+\
+  \}[profit];\
+\
+  const riskText = \{\
+\
+    low:"\uc0\u1505 \u1497 \u1499 \u1493 \u1503  \u1502 \u1513 \u1493 \u1506 \u1512  \u1504 \u1502 \u1493 \u1498  \u1497 \u1495 \u1505 \u1497 \u1514 .",\
+\
+    medium:"\uc0\u1505 \u1497 \u1499 \u1493 \u1503  \u1502 \u1513 \u1493 \u1506 \u1512  \u1489 \u1497 \u1504 \u1493 \u1504 \u1497 .",\
+\
+    high:"\uc0\u1505 \u1497 \u1499 \u1493 \u1503  \u1502 \u1513 \u1493 \u1506 \u1512  \u1490 \u1489 \u1493 \u1492 ."\
+\
+  \}[risk];\
+\
+  let growthText = "\uc0\u1500 \u1488  \u1492 \u1493 \u1494 \u1503  \u1504 \u1514 \u1493 \u1503  \u1510 \u1502 \u1497 \u1495 \u1514  \u1492 \u1499 \u1504 \u1505 \u1493 \u1514 .";\
+\
+  if (growthRaw !== "" && Number.isFinite(growth)) \{\
+\
+    growthText = "\uc0\u1510 \u1502 \u1497 \u1495 \u1514  \u1492 \u1499 \u1504 \u1505 \u1493 \u1514  \u1513 \u1492 \u1493 \u1494 \u1504 \u1492 : " + growth + "%.";\
+\
+  \}\
+\
+  document.getElementById("analysisResult").textContent =\
+\
+    "\uc0\u1505 \u1497 \u1499 \u1493 \u1501  \u1502 \u1504 \u1497 \u1492 : " + symbol + "\\n\\n" +\
+\
+    growthText + "\\n" +\
+\
+    profitText + "\\n" +\
+\
+    riskText + "\\n\\n" +\
+\
+    "\uc0\u1492 \u1506 \u1512 \u1493 \u1514  \u1513 \u1492 \u1493 \u1494 \u1504 \u1493 :\\n" + (notes || "\u1500 \u1488  \u1492 \u1493 \u1494 \u1504 \u1493  \u1492 \u1506 \u1512 \u1493 \u1514 .") +\
+\
+    "\\n\\n\uc0\u1492 \u1505 \u1497 \u1499 \u1493 \u1501  \u1502 \u1489 \u1493 \u1505 \u1505  \u1512 \u1511  \u1506 \u1500  \u1492 \u1504 \u1514 \u1493 \u1504 \u1497 \u1501  \u1513 \u1492 \u1494 \u1504 \u1514 . \u1492 \u1493 \u1488  \u1488 \u1497 \u1504 \u1493  \u1504 \u1497 \u1514 \u1493 \u1495  AI \u1488 \u1493  \u1492 \u1502 \u1500 \u1510 \u1514  \u1511 \u1504 \u1497 \u1497 \u1492 .";\
+\
+\}\
+\
+function clearAnalysis() \{\
+\
+  ["analysisSymbol","analysisRevenue","analysisNotes"].forEach(id => \{\
+\
+    document.getElementById(id).value = "";\
+\
+  \});\
+\
+  document.getElementById("analysisProfit").value = "positive";\
+\
+  document.getElementById("analysisRisk").value = "medium";\
+\
+  document.getElementById("analysisResult").textContent = "\uc0\u1492 \u1505 \u1497 \u1499 \u1493 \u1501  \u1497 \u1493 \u1508 \u1497 \u1506  \u1499 \u1488 \u1503 .";\
+\
+\}\
+\
+function render() \{\
+\
+  document.getElementById("budget").value = state.budget;\
+\
+  document.getElementById("cash").value = state.cash;\
+\
+  document.getElementById("fee").value = state.fee;\
+\
+  const totalValue = state.holdings.reduce(\
+\
+    (sum,x) => sum + x.shares * x.price * x.fx, 0\
+\
+  );\
+\
+  const totalShares = state.holdings.reduce((sum,x) => sum + x.shares, 0);\
+\
+  document.getElementById("statBudget").textContent = money(state.budget);\
+\
+  document.getElementById("statValue").textContent = money(totalValue);\
+\
+  document.getElementById("statCount").textContent = totalShares.toLocaleString("he-IL");\
+\
+  document.getElementById("statWatch").textContent = state.watchlist.length;\
+\
+  const available = Math.max(0, state.budget - state.cash);\
+\
+  const feeReserve = state.fee * state.holdings.length;\
+\
+  document.getElementById("budgetResult").textContent =\
+\
+    "\uc0\u1514 \u1511 \u1510 \u1497 \u1489  \u1499 \u1493 \u1500 \u1500 : " + money(state.budget) + "\\n" +\
+\
+    "\uc0\u1502 \u1494 \u1493 \u1502 \u1503  \u1494 \u1502 \u1497 \u1503 : " + money(state.cash) + "\\n" +\
+\
+    "\uc0\u1514 \u1511 \u1510 \u1497 \u1489  \u1492 \u1513 \u1511 \u1506 \u1492  \u1500 \u1508 \u1504 \u1497  \u1506 \u1502 \u1500 \u1493 \u1514 : " + money(available) + "\\n" +\
+\
+    "\uc0\u1492 \u1506 \u1512 \u1499 \u1514  \u1506 \u1502 \u1500 \u1493 \u1514  \u1500 \u1508 \u1497  \u1502 \u1505 \u1508 \u1512  \u1513 \u1493 \u1512 \u1493 \u1514  \u1489 \u1514 \u1497 \u1511 : " + money(feeReserve) + "\\n" +\
+\
+    "\uc0\u1492 \u1505 \u1499 \u1493 \u1501  \u1488 \u1497 \u1504 \u1493  \u1499 \u1493 \u1500 \u1500  \u1506 \u1502 \u1500 \u1493 \u1514  \u1502 \u1499 \u1497 \u1512 \u1492  \u1488 \u1493  \u1506 \u1500 \u1493 \u1497 \u1493 \u1514  \u1504 \u1493 \u1505 \u1508 \u1493 \u1514 .";\
+\
+  const holdingsBody = document.getElementById("holdingsBody");\
+\
+  holdingsBody.innerHTML = state.holdings.map(x => `\
+\
+    <tr>\
+\
+      <td><strong>$\{safe(x.symbol)\}</strong></td>\
+\
+      <td>$\{Number(x.shares).toLocaleString("he-IL")\}</td>\
+\
+      <td>$\{money(x.price,"USD")\}</td>\
+\
+      <td>$\{money(x.shares*x.price*x.fx)\}</td>\
+\
+      <td>\
+\
+        <button class="small secondary" onclick="updateHolding('$\{safe(x.id)\}')">\uc0\u1506 \u1491 \u1499 \u1493 \u1503 </button>\
+\
+        <button class="small danger" onclick="removeHolding('$\{safe(x.id)\}')">\uc0\u1502 \u1495 \u1497 \u1511 \u1492 </button>\
+\
+      </td>\
+\
+    </tr>\
+\
+  `).join("");\
+\
+  document.getElementById("holdingsEmpty").classList.toggle(\
+\
+    "hidden", state.holdings.length > 0\
+\
+  );\
+\
+  const watchBody = document.getElementById("watchBody");\
+\
+  watchBody.innerHTML = state.watchlist.map(x => `\
+\
+    <tr>\
+\
+      <td><strong>$\{safe(x.symbol)\}</strong></td>\
+\
+      <td>$\{safe(x.note || "\'97")\}</td>\
+\
+      <td><button class="small danger" onclick="removeWatch('$\{safe(x.id)\}')">\uc0\u1492 \u1505 \u1512 </button></td>\
+\
+    </tr>\
+\
+  `).join("");\
+\
+  document.getElementById("watchEmpty").classList.toggle(\
+\
+    "hidden", state.watchlist.length > 0\
+\
+  );\
+\
+\}\
+\
+function exportData() \{\
+\
+  const blob = new Blob([JSON.stringify(state,null,2)], \{\
+\
+    type:"application/json"\
+\
+  \});\
+\
+  const url = URL.createObjectURL(blob);\
+\
+  const a = document.createElement("a");\
+\
+  a.href = url;\
+\
+  a.download = "stock-portfolio-backup.json";\
+\
+  a.click();\
+\
+  URL.revokeObjectURL(url);\
+\
+  document.getElementById("dataMessage").textContent = "\uc0\u1511 \u1493 \u1489 \u1509  \u1492 \u1490 \u1497 \u1489 \u1493 \u1497  \u1504 \u1493 \u1510 \u1512 .";\
+\
+\}\
+\
+function importData(event) \{\
+\
+  const file = event.target.files?.[0];\
+\
+  if (!file) return;\
+\
+  const reader = new FileReader();\
+\
+  reader.onload = () => \{\
+\
+    try \{\
+\
+      const data = JSON.parse(reader.result);\
+\
+      if (!data || !Array.isArray(data.holdings) ||\
+\
+          !Array.isArray(data.watchlist)) \{\
+\
+        throw new Error("\uc0\u1508 \u1493 \u1512 \u1502 \u1496  \u1500 \u1488  \u1514 \u1511 \u1497 \u1503 ");\
+\
+      \}\
+\
+      state = \{\
+\
+        ...defaultState(),\
+\
+        ...data,\
+\
+        holdings:data.holdings,\
+\
+        watchlist:data.watchlist\
+\
+      \};\
+\
+      persist();\
+\
+      render();\
+\
+      document.getElementById("dataMessage").textContent = "\uc0\u1492 \u1490 \u1497 \u1489 \u1493 \u1497  \u1497 \u1493 \u1489 \u1488  \u1489 \u1492 \u1510 \u1500 \u1495 \u1492 .";\
+\
+    \} catch \{\
+\
+      alert("\uc0\u1500 \u1488  \u1504 \u1497 \u1514 \u1503  \u1500 \u1497 \u1497 \u1489 \u1488  \u1488 \u1514  \u1492 \u1511 \u1493 \u1489 \u1509 . \u1489 \u1491 \u1493 \u1511  \u1513 \u1494 \u1492 \u1493  \u1511 \u1493 \u1489 \u1509  \u1490 \u1497 \u1489 \u1493 \u1497  \u1502 \u1514 \u1488 \u1497 \u1501 .");\
+\
+    \}\
+\
+    event.target.value = "";\
+\
+  \};\
+\
+  reader.readAsText(file);\
+\
+\}\
+\
+function clearAll() \{\
+\
+  if (!confirm("\uc0\u1500 \u1502 \u1495 \u1493 \u1511  \u1488 \u1514  \u1499 \u1500  \u1514 \u1497 \u1511  \u1492 \u1492 \u1513 \u1511 \u1506 \u1493 \u1514 , \u1512 \u1513 \u1497 \u1502 \u1514  \u1492 \u1502 \u1506 \u1511 \u1489  \u1493 \u1492 \u1514 \u1511 \u1510 \u1497 \u1489  \u1492 \u1513 \u1502 \u1493 \u1512 ?")) return;\
+\
+  state = defaultState();\
+\
+  persist();\
+\
+  render();\
+\
+  document.getElementById("dataMessage").textContent = "\uc0\u1492 \u1504 \u1514 \u1493 \u1504 \u1497 \u1501  \u1504 \u1502 \u1495 \u1511 \u1493 .";\
+\
+\}\
+\
+render();\
+\
+</script>\
+\
+</body>\
+\
+</html>}
